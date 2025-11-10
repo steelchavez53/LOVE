@@ -1,31 +1,32 @@
+// Pedir nombre y mostrarlo
 var bienvenida = "Escribe tu hermoso nombre 💖✨: ";
 var data = prompt(bienvenida);
+document.getElementById("data").innerHTML = data ? ", " + data.toUpperCase() : "";
 
-//Imprimir el nombre de la persona y transformarlo a mayúsculas
-document.getElementById("data").innerHTML = data.toUpperCase();
-
+// Botones
 const yesBtn = document.querySelector('#yesBtn');
+const noBtn = document.querySelector('#noBtn');
 
-//ESCRIBIR LO QUE PASARÁ EN CASO DE QUE SÍ
-yesBtn.addEventListener('click', function(){
-    alert('Siempre supe que aceptarías 💕'); 
+// Acción del botón SI
+yesBtn.addEventListener('click', function() {
+    alert('Siempre supe que aceptarías 💕');
     location.href = 'https://www.youtube.com/watch?v=SmF4wY7U7QE&list=RDSmF4wY7U7QE&start_radio=1';
 });
 
-const noBtn = document.querySelector('#noBtn');
-
-// ✅ Función para mover aleatoriamente el botón
+// Función para mover botón NO
 function moverBoton() {
-    const randomX = Math.random() * 80; // Bajé a 80% para evitar que salga fuera de pantalla
-    const randomY = Math.random() * 80;
+    const maxX = window.innerWidth - noBtn.offsetWidth;
+    const maxY = window.innerHeight - noBtn.offsetHeight;
 
-    noBtn.style.top = randomY + "%";
-    noBtn.style.left = randomX + "%";
-    noBtn.style.transform = `translate(-${randomX}%, -${randomY}%)`;
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    noBtn.style.left = randomX + "px";
+    noBtn.style.top = randomY + "px";
 }
 
-// ✅ PC: cuando pases el mouse
+// PC: mouseover
 noBtn.addEventListener('mouseover', moverBoton);
 
-// ✅ MÓVIL: cuando intente tocarlo
+// Móvil: touchstart
 noBtn.addEventListener('touchstart', moverBoton);
