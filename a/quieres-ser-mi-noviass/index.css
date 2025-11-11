@@ -1,0 +1,77 @@
+*{
+    margin: 0px;
+    font-family: aaroncito, Verdana;
+    font-size: 25px;
+}
+
+/*En caso de querer cambiar el tipo de letra, descarga un archivo .TTF y lo guardas en tu carpeta
+principal.*/
+@font-face{
+    font-family: aaroncito;
+    src: url(Bullate\ Regular.ttf);
+}
+
+/*Cuerpo general del documento*/
+.container{
+    background: pink; /*Cambiar el color de todo el fondo*/
+    width: 100vw;
+    height: 100vh;
+}
+/*Letras principales*/
+p{
+    text-align: center;
+}
+span{
+    font-size: 60px; /*Cambiar el tamaño de las letras principales*/
+    padding: 0px;
+}
+
+.centrador{
+    text-align: center;
+}
+
+.dog{
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+}
+
+button{
+    font-size: 50px;
+    margin-top: 25px;
+}
+
+#yesBtn{
+    width: 300px;
+    height: 100px;   
+    background-color: #00FFFF;
+    border: solid 2px white;
+}
+#noBtn{
+    position: absolute;
+    background-color: #A18262;
+    border: solid 2px white;
+}
+
+/*CONFIGURAR CLASES PARA CADA COLOR DE LETRA*/
+.amarillo{
+    color: yellow;
+}
+.rosa{
+    color: #ad4f8b; 
+}
+.naranja{
+    color: #cc7134;
+}
+.azul{
+    color: #572364;
+}
+.verde{
+    color: #2d572c ;
+}
+
+/*CAMBIAR COLOR DEL NOMBRE DE LA PERSONA*/
+.nombre{   
+    -webkit-text-fill-color: red; /*Cambiar el color de la letra*/
+    -webkit-text-stroke: 2px black;  /*Cambiar el grosor del borde y su color*/
+}

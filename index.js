@@ -1,32 +1,28 @@
-// Pedir nombre y mostrarlo
+// Pedir nombre
 var bienvenida = "Escribe tu hermoso nombre 💖✨: ";
 var data = prompt(bienvenida);
-document.getElementById("data").innerHTML = data ? ", " + data.toUpperCase() : "";
+document.getElementById("data").innerHTML = data ? data.toUpperCase() : "";
 
-// Botones
+// Botón 'Sí'
 const yesBtn = document.querySelector('#yesBtn');
-const noBtn = document.querySelector('#noBtn');
-
-// Acción del botón SI
-yesBtn.addEventListener('click', function() {
-    alert('Siempre supe que aceptarías 💕');
+yesBtn.addEventListener('click', function(){
+    alert('¡Siempre supe que aceptarías! 💖');
     location.href = 'https://www.youtube.com/watch?v=SmF4wY7U7QE&list=RDSmF4wY7U7QE&start_radio=1';
 });
 
-// Función para mover botón NO
+// Botón 'No'
+const noBtn = document.querySelector('#noBtn');
+
 function moverBoton() {
-    const maxX = window.innerWidth - noBtn.offsetWidth;
-    const maxY = window.innerHeight - noBtn.offsetHeight;
+    const randomX = Math.random() * 80; // evita salirse de pantalla
+    const randomY = Math.random() * 80;
 
-    const randomX = Math.random() * maxX;
-    const randomY = Math.random() * maxY;
-
-    noBtn.style.left = randomX + "px";
-    noBtn.style.top = randomY + "px";
+    noBtn.style.top = randomY + '%';
+    noBtn.style.left = randomX + '%';
+    noBtn.style.transform = `translate(-${randomX}%, -${randomY}%)`;
 }
 
-// PC: mouseover
+// Para PC
 noBtn.addEventListener('mouseover', moverBoton);
-
-// Móvil: touchstart
+// Para móvil
 noBtn.addEventListener('touchstart', moverBoton);

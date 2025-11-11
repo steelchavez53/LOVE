@@ -1,81 +1,77 @@
-*{
-    margin: 0px;
+* {
+    margin: 0;
     font-family: aaroncito, Verdana;
     font-size: 25px;
 }
 
-/*En caso de querer cambiar el tipo de letra, descarga un archivo .TTF y lo guardas en tu carpeta
-principal.*/
-@font-face{
+@font-face {
     font-family: aaroncito;
     src: url(Bullate\ Regular.ttf);
 }
 
-/*Cuerpo general del documento*/
-.container{
-    background: pink; /*Cambiar el color de todo el fondo*/
+.container {
+    position: relative; /* necesario para el botón 'no' */
+    overflow: hidden;   /* evita que se salga de la pantalla */
+    background: pink;
     width: 100vw;
     height: 100vh;
-    position: relative; /* importante para limitar el movimiento */
-    overflow: hidden;   /* evita que se salga */
-}
-/*Letras principales*/
-p{
-    text-align: center;
-}
-span{
-    font-size: 60px; /*Cambiar el tamaño de las letras principales*/
-    padding: 0px;
 }
 
-.centrador{
+p {
     text-align: center;
 }
 
-.dog{
+span {
+    font-size: 60px;
+    padding: 0;
+}
+
+.centrador {
+    text-align: center;
+}
+
+.dog {
     width: 120px;
     height: 120px;
     display: inline-block;
 }
 
-button{
+button {
     font-size: 50px;
     margin-top: 25px;
 }
 
-#yesBtn{
+#yesBtn {
     width: 300px;
     height: 100px;   
     background-color: #00FFFF;
     border: solid 2px white;
 }
-#noBtn{
+
+#noBtn {
     position: absolute;
     background-color: #A18262;
     border: solid 2px white;
-    transition: top 0.15s, left 0.15s; /* suave */
-    touch-action: none; /* evita zoom accidental al tocar */
 }
 
-/*CONFIGURAR CLASES PARA CADA COLOR DE LETRA*/
-.amarillo{
-    color: yellow;
-}
-.rosa{
-    color: #ad4f8b; 
-}
-.naranja{
-    color: #cc7134;
-}
-.azul{
-    color: #572364;
-}
-.verde{
-    color: #2d572c ;
+/* Colores de las letras */
+.amarillo { color: yellow; }
+.rosa { color: #ad4f8b; }
+.naranja { color: #cc7134; }
+.azul { color: #572364; }
+.verde { color: #2d572c; }
+
+/* Nombre de la persona */
+.nombre {   
+    -webkit-text-fill-color: red;
+    -webkit-text-stroke: 2px black;
 }
 
-/*CAMBIAR COLOR DEL NOMBRE DE LA PERSONA*/
-.nombre{   
-    -webkit-text-fill-color: red; /*Cambiar el color de la letra*/
-    -webkit-text-stroke: 2px black;  /*Cambiar el grosor del borde y su color*/
+/* Ajustes para móviles */
+@media screen and (max-width: 600px) {
+    span { font-size: 40px; }
+    button { font-size: 35px; width: 200px; height: 80px; }
+    .dog { width: 80px; height: 80px; }
 }
+
+
