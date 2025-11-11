@@ -12,14 +12,23 @@ yesBtn.addEventListener('click', function(){
 
 // Botón 'No'
 const noBtn = document.querySelector('#noBtn');
+const container = document.querySelector('.container');
 
 function moverBoton() {
-    const randomX = Math.random() * 80; // evita salirse de pantalla
-    const randomY = Math.random() * 80;
+    const btnWidth = noBtn.offsetWidth;
+    const btnHeight = noBtn.offsetHeight;
+    const contWidth = container.clientWidth;
+    const contHeight = container.clientHeight;
 
-    noBtn.style.top = randomY + '%';
-    noBtn.style.left = randomX + '%';
-    noBtn.style.transform = `translate(-${randomX}%, -${randomY}%)`;
+    // Calculamos posición aleatoria dentro del contenedor
+    const maxX = contWidth - btnWidth;
+    const maxY = contHeight - btnHeight;
+
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    noBtn.style.left = randomX + 'px';
+    noBtn.style.top = randomY + 'px';
 }
 
 // Para PC
